@@ -13,16 +13,21 @@ function maxOfTwoNumbers(num1, num2) {
 
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord (anArray) {
+function findLongestWord(anArray){
 
-  let longestWord = anArray[0]
-
-  anArray.forEach( ( aSingleWord ) => {
-    if (aSingleWord.length > longestWord.lenth) {
-      longestWord = aSingleWord
+  if(anArray.length == 0){
+    return null;
+  }
+  let longestWord = anArray[0];
+  
+  anArray.forEach( (aSingleWord) => {
+    if(aSingleWord.length > longestWord.length){
+      longestWord = aSingleWord;
     }
   })
-}
+  
+  return longestWord;
+  }
 
 
 findLongestWord(wordsArr);
@@ -46,11 +51,17 @@ function sumArray (num) {
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers (num) {
+
+  if(num.length == 0) {
+  return null;
+  }
+
   let sum = 0;
   num.forEach ( num1 => {
     sum += num1;
   })
-  return sum;
+  return sum / num.length;
+
 }
 
 
@@ -68,6 +79,19 @@ const wordsArr = [
   'palace'
 ];
 
+function averageWordLength (avgword) {
+
+  if (avgword.length == 0) {
+    return null;
+  }
+  
+  let wordsum = 0;
+  avgword.forEach ( word => {
+    wordsum += word.length;
+  })
+  return wordsum / avgword.length;
+}
+
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -83,6 +107,8 @@ const wordsUnique = [
   'bring'
 ];
 
+
+
 // Iteration #6: Find elements
 const wordsFind = [
   'machine',
@@ -94,6 +120,7 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -134,3 +161,5 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+
